@@ -1,0 +1,550 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+
+header {
+    background-color: #000;
+    padding: 20px 0; /* Adjusted padding */
+    position: fixed;
+    width: 100%;
+    top: 50px;
+    z-index: 1000;
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0 20px; /* Added margin */
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding-bottom: 5px;
+    position: relative;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #38c485;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* تغيير اتجاه العناصر إلى عمودي */
+        align-items: center; /* توسيط العناصر في وسط الهيدر */
+        font-size: 0.7rem;
+    }
+
+    .header-item {
+        flex: 0 0 calc(33.33% - 20px); /* يحتل كل عنصر ثلث العرض مع هامش 10px بين العناصر */
+        margin: 10px; /* تباعد بين العناصر */
+    }
+}
+
+
+
+.hero {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding-top: 80px; /* Adjusted for navbar height */
+    line-height: 1.2;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin: 0;
+    opacity: 0.7;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.hero h3 {
+    font-size: 1.5rem;
+    color: #38c485;
+    margin: 0;
+    letter-spacing: 0.3rem;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero h3 {
+        font-size: 1.2rem;
+    }
+}
+
+.about {
+    padding: 30px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh; /* اجعل القسم يمتد بطول الصفحة */
+}
+
+.about h2 {
+    color: #38c485;
+    font-size: 2.5rem;
+    margin-bottom: 2px; /* تقليل المسافة بين العنوان والمحتوى */
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin: 0 auto; /* توسيط المحتوى */
+    max-width: 1200px; /* تحديد عرض أقصى للمحتوى */
+    margin-top: -40px; 
+}
+
+.about-text {
+    width: 60%;
+    font-size: 1rem; 
+    text-align: left;
+}
+
+.about-text p {
+    font-size: 1rem; 
+    line-height: 1.6;
+}
+
+.about-text button {
+    background-color: #38c485;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.about-image {
+    width: 35%;
+    text-align: center;
+}
+
+.about-image img {
+    border-radius: 50%;
+    border: 5px solid #38c485;
+    width: 100%;
+    max-width: 350px; 
+}
+
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-image {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .about h2 {
+        font-size: 2rem; 
+        margin-bottom: 50px; 
+    }
+}
+.skills {
+    padding: 50px ;
+    text-align: center;
+    background-color: #000;
+    margin-bottom: 50px;
+}
+
+.skills h2 {
+    color: #38c485;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.skills-content {
+    display: grid;
+    gap: 30px  ;
+    justify-content: center;
+    grid-template-columns: repeat(6, 1fr); 
+}
+
+.skill-item {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    border-radius: 10px; 
+    overflow: hidden; 
+    background-color: #242323; 
+    padding: 15px ;
+    transition: background-color 0.3s; 
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+
+.skill-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 50%; 
+}
+
+.skill-item p {
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+.skill-item:hover {
+    background-color: #38c485; 
+}
+.skill-item {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-content {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-content {
+        grid-template-columns: 1fr; 
+    }
+}
+.about h2 {
+    border-bottom: 5px solid #38c485;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.skills h2 {
+    border-bottom: 5px solid #38c485;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.experiences h2{
+    border-bottom: 5px solid #38c485;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.experiences {
+    background-color: #000; 
+    text-align: center;
+    padding: 50px 0;
+   
+    
+    
+}
+
+.experiences h2 {
+    color: #38c485; 
+    font-size: 2.5rem; 
+    margin-bottom: 40px; 
+}
+
+/* Remove default list styling */
+.experience-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(3, 1fr); 
+    justify-content: center;
+}
+
+
+.experience-item p {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: #fff;
+}
+@media (max-width: 768px) {
+    .experience-list {
+        grid-template-columns: repeat(1, 1fr); /* تم تعديل عدد الأعمدة لتكون عمودية في الأجهزة الصغيرة */
+        gap: 20px; /* تم تعديل المسافة بين العناصر لتكون أصغر في الأجهزة الصغيرة */
+    }
+
+    .experiences h2 {
+        font-size: 1.5rem; /* تم تعديل حجم العنوان ليكون أصغر في الأجهزة الصغيرة */
+        margin-bottom: 20px; /* تم تعديل هنا ليكون أصغر مع الحجم الجديد للعنوان */
+    }
+
+    .experience-item p {
+        font-size: 0.9rem; /* تم تعديل حجم النص ليكون أصغر في الأجهزة الصغيرة */
+    }
+}
+
+
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+  
+  .column {
+    flex: 33.33%;
+    padding: 0 15px;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s;
+  }
+  
+  
+
+.swiper-wrapper {
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    grid-gap: 15px; /* زيادة المسافة بين الصور */
+    padding: 20px auto; /* إضافة حدود بين الصور والشاشة */
+}
+
+.swiper-slide {
+    position: relative;
+    overflow: hidden;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    transition: filter 0.5s;
+    padding: 0px; /* إضافة حدود داخلية للصور */
+    
+}
+
+.swiper-slide:hover img {
+    filter: brightness(130%);
+}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);    
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    width: 100%;
+    height: 40%;
+    font-size: 24px; /* حجم الخط */
+    font-weight: bold; /* سمك الخط */
+    font-family: 'Arial', sans-serif; /* نوع الخط */
+    
+}
+
+
+.swiper-slide:hover .overlay {
+    opacity: 0.8;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* إضافة لوضوح المركز */
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.gallery h2 {
+    color: #38c485;
+    font-size: 2.5rem; 
+    margin-bottom: 40px; 
+    border-bottom: 5px solid #38c485;
+    padding-bottom: 5px;
+    margin: 40px 0; /* زيادة المسافة حول العنوان */
+    display: inline-block; /* تحويل العنوان إلى عنصر مستطيل */
+}
+.productions h2 {
+    color: #38c485;
+    text-align: center;
+    font-size: 2.5rem; 
+    margin-bottom: 40px; 
+    border-bottom: 5px solid #38c485;
+    padding-bottom: 5px;
+    display: block; /* تغيير العرض لكي يمتد على عرض الشاشة */
+    width: fit-content; /* أو أي قيمة تناسب التصميم */
+    margin: 40px auto; /* توسيط العنوان */
+}
+
+.productions {
+    text-align: center;
+    margin: 40px 0;
+}
+.productions-content {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.production-item {
+    display: grid;
+    grid-template-areas: "image info";
+    gap: 10px;
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #242323;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #242323;
+    color: #fff;
+    position: relative;
+    transition: border-color 0.3s;
+    border-radius: 20px; /* تطبيق Border Radius */
+    cursor: pointer;
+    
+}
+
+.production-item img {
+    grid-area: image;
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.production-item .info {
+    grid-area: info;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.production-item h3,
+.production-item p {
+    margin: 5px 0;
+    color: white;
+}
+
+
+.production-item:hover {
+    border-color: #38c485;
+}
+
+.production-item p {
+    margin: 5px 0;
+}
+@media (max-width: 1200px) {
+    .productions-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .productions-content {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .production-item {
+        grid-template-areas:
+            "image"
+            "info";
+    }
+    .production-item img {
+        margin: 0 auto;
+    }
+    .production-item .info {
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+footer {
+    background-color: #38c485;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.main-text {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.sub-text {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8); /* لون أخف من الأبيض */
+    
+}
+
+.copy-right {
+    font-size: 14px;
+    color: white;
+}
